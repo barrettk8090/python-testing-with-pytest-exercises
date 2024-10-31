@@ -64,6 +64,24 @@ def test_from_dict():
     assert c1 == c2
 
 
+def test_both_from_dict():
+    c1_dict = {
+        "summary": "something",
+        "owner": "brian",
+        "state": "todo",
+        "id": 123,
+    }
+    c2_dict = {
+        "summary": "something",
+        "owner": "brian",
+        "state": "todo",
+        "id": 123,
+    }
+    c1 = Card.from_dict(c1_dict)
+    c2 = Card.from_dict(c2_dict)
+    assert c1 == c2
+
+
 def test_to_dict():
     c1 = Card("something", "brian", "todo", 123)
     c2 = c1.to_dict()
